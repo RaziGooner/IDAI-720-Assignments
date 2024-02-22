@@ -12,7 +12,7 @@ y = np.array(train["Rating"])
 model = VGG_Pre()
 # Train the model with Reweighing
 sample_weight = Reweighing(train, y, protected)
-model.fit(X, y, sample_weight=sample_weight, epochs=50)
+model.fit(X, y, sample_weight=sample_weight, epochs=200, batch_size=100)
 
 # Load test data
 test, protected = load_scut("../data/test.csv")
